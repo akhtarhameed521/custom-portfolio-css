@@ -1,9 +1,10 @@
-"use client"; 
+"use client";
 
 import Link from "next/link";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
+import "./styles.css"; // Import the custom CSS file
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,16 +17,15 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative bg-white shadow-md z-50 ">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">My Portfolio</h1>
-        
-        <button onClick={toggleMenu} className="lg:hidden">
+    <nav className="navbar">
+      <div className="navbar-container">
+        <h1 className="navbar-title">My Portfolio</h1>
+
+        <button onClick={toggleMenu} className="menu-button">
           {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
 
-       
-        <ul className="hidden lg:flex gap-10 font-mono text-lg font-bold capitalize">
+        <ul className="desktop-menu">
           {["home", "about", "projects", "experience", "contact"].map((item) => (
             <Link key={item} href={`/${item === "home" ? "" : item}`}>
               {item}
@@ -33,11 +33,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        
         <AnimatePresence>
           {isOpen && (
             <motion.ul
-              className="absolute top-16 left-0 w-full bg-white flex flex-col items-center gap-6 py-10 shadow-lg font-mono text-lg font-bold capitalize"
+              className="mobile-menu"
               initial="closed"
               animate="open"
               exit="closed"

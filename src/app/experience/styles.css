@@ -1,0 +1,85 @@
+/* General styles */
+body, .page-container {
+    font-family: serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Page container */
+  .page-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    height: 80vh;
+    overflow-y: auto;
+    padding-right: 20px;
+    background-color: #F1F5F9; /* Slate-100 */
+  }
+  
+  /* Left Profile Image */
+  .profile-image-container {
+    flex-shrink: 0;
+  }
+  
+  /* Right experience section */
+  .experience-section {
+    width: 100%;
+  }
+  
+  .experience-section h2 {
+    font-size: 2em;
+    color: #1E293B; /* Slate-800 */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .experience-details {
+    margin-top: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .experience-card, .project-card {
+    background-color: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    padding: 24px;
+    border: 1px solid #E5E7EB; /* Gray-200 */
+    margin-bottom: 20px;
+  }
+  
+  .experience-card h3, .project-card h3 {
+    font-size: 1.25em;
+    color: #1E293B; /* Slate-800 */
+    font-weight: 600;
+  }
+  
+  .experience-card p, .project-card p {
+    font-size: 0.875em;
+    color: #6B7280; /* Gray-500 */
+  }
+  
+  .project-title {
+    font-size: 1.125em;
+    color: #374151; /* Slate-700 */
+    font-weight: 600;
+    margin-top: 16px;
+  }
+  
+  .project-description {
+    color: #4B5563; /* Gray-600 */
+    margin-top: 8px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .page-container {
+      flex-direction: column;
+      padding-right: 0;
+    }
+  
+    .experience-section {
+      width: 100%;
+    }
+  }
+  

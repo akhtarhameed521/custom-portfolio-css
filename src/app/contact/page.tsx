@@ -1,76 +1,68 @@
-import { Input } from "@/components/ui/input"; // ShadCN Input
-import { Textarea } from "@/components/ui/textarea"; // ShadCN Textarea
-import { Button } from "@/components/ui/button"; // ShadCN Button
-import { Mail, Phone, MapPin } from "lucide-react"; // Icons from lucide-react
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin } from "lucide-react";
 import React from "react";
 import ProfileImage from "@/components/layout/ProfileImage";
 import SectionHeader from "@/components/layout/SectionHeader";
+import "./style.css"; 
 
 export default function Page() {
   return (
-    <div className="flex gap-0 sm:gap-0 md:gap-0 lg:gap-10 p-5 sm:p-5 md:p-5 lg:p-0   mt-5  font-serif h-[80vh] overflow-y-auto bg-slate-100  ">
-        <div>
-            <ProfileImage/>
-        </div>
-      <div className="w-full lg:w-3/4 mt-5 pr-5 ">
+    <div className="contact-container">
+      <div>
+        <ProfileImage />
+      </div>
+      <div className="contact-content">
         <SectionHeader title="Contact" />
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Get in Touch
-        </h1>
-        <p className="text-center text-gray-600 mb-8">
+        <h1 className="contact-title">Get in Touch</h1>
+        <p className="contact-description">
           Have any questions or need help? Fill out the form below, and we’ll get back to you as soon as possible!
         </p>
 
-        {/* Contact Form */}
-        <form className="space-y-6  ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Name Input */}
-            <div>
-              <label htmlFor="name" className="text-sm font-medium text-gray-700">
+        <form className="contact-form">
+          <div className="contact-grid">
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
                 Full Name
               </label>
-              <Input id="name" type="text" placeholder="Enter your name" className="mt-1" />
+              <Input id="name" type="text" placeholder="Enter your name" className="form-input" />
             </div>
-
-            {/* Email Input */}
-            <div>
-              <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
                 Email Address
               </label>
-              <Input id="email" type="email" placeholder="Enter your email" className="mt-1" />
+              <Input id="email" type="email" placeholder="Enter your email" className="form-input" />
             </div>
           </div>
 
-          {/* Message Textarea */}
-          <div>
-            <label htmlFor="message" className="text-sm font-medium text-gray-700">
+          <div className="form-group">
+            <label htmlFor="message" className="form-label">
               Your Message
             </label>
-            <Textarea id="message" rows={4} placeholder="Type your message..." className="mt-1" />
+            <Textarea id="message" rows={4} placeholder="Type your message..." className="form-textarea" />
           </div>
 
-         
-          <div className="text-center">
-            <Button type="submit" className="w-full text-white">
+          <div className="submit-container">
+            <Button type="submit" className="submit-button">
               Send Message
             </Button>
           </div>
         </form>
 
-       
-        <div className="mt-10 space-y-4 pb-4 ">
-          <h2 className="text-xl font-semibold text-gray-800">Contact Info</h2>
-          <div className="flex items-center space-x-4">
-            <Mail className="w-6 h-6 text-gray-600" />
-            <p className="text-gray-700">akhtar.hameed521@gmail.com</p>
+        <div className="contact-info">
+          <h2 className="contact-info-title">Contact Info</h2>
+          <div className="contact-info-item">
+            <Mail className="contact-info-icon" />
+            <p className="contact-info-text">akhtar.hameed521@gmail.com</p>
           </div>
-          <div className="flex items-center space-x-4">
-            <Phone className="w-6 h-6 text-gray-600" />
-            <p className="text-gray-700">+1 (234) 567-890</p>
+          <div className="contact-info-item">
+            <Phone className="contact-info-icon" />
+            <p className="contact-info-text">+1 (234) 567-890</p>
           </div>
-          <div className="flex items-center space-x-4">
-            <MapPin className="w-6 h-6 text-gray-600" />
-            <p className="text-gray-700">1234 Street, City, Country</p>
+          <div className="contact-info-item">
+            <MapPin className="contact-info-icon" />
+            <p className="contact-info-text">1234 Street, City, Country</p>
           </div>
         </div>
       </div>

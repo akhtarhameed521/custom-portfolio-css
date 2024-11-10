@@ -1,14 +1,15 @@
-interface contentTypes{
-    title: string
-  }
+import React from 'react';
+import './styles.css'; // Import the custom CSS file
 
-import React from 'react'
+interface ContentTypes {
+  title: string;
+}
 
-export default function SectionHeader({title} : contentTypes ) {
+export default function SectionHeader({ title }: ContentTypes) {
   return (
-    <div className="flex items-center gap-3">
-      <h2 className="text-[15px] font-semibold text-nowrap ">{title}</h2>
-      <hr className="h-[2px] w-full bg-black" />
+    <div className="section-header">
+      <h2 className="section-titles">{title}</h2>
+      <hr className="section-divider" />
     </div>
-  )
+  );
 }

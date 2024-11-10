@@ -2,16 +2,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  FaArrowUp,
-  FaArrowDown,
-  FaArrowLeft,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaArrowUp, FaArrowDown, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import AboutContent from "@/components/layout/AboutContent";
 import ProfileImage from "@/components/layout/ProfileImage";
 import SectionHeader from "@/components/layout/SectionHeader";
+import styles from "@/app/projects/page.module.css";
 
 // Dummy image data for the gallery
 const images = [
@@ -51,27 +47,27 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex gap-10 mt-5 font-serif h-auto bg-slate-100 pr-5 overflow-hidden ">
+      <div className={styles.container}>
         {/* Profile Image */}
         <div>
           <ProfileImage />
         </div>
 
         {/* Project Section */}
-        <div className="w-full sm:w-full md:w-full lg:w-3/4 mt-5">
+        <div className={styles.projectSection}>
           <SectionHeader title="Projects" />
 
           {/* Slider container for 1st and 2nd slides */}
-          <div className="h-full w-full flex flex-col gap-10 items-center  relative">
-            <div className=" flex justify-end mt-5 gap-4">
+          <div className={styles.sliderContainer}>
+            <div className="flex justify-end mt-5 gap-4">
               <Button
-                className="text-white p-3 rounded-lg"
+                className={styles.button}
                 onClick={handlePrevSlide}
               >
                 <FaArrowLeft />
               </Button>
               <Button
-                className="text-white p-3 rounded-lg"
+                className={styles.button}
                 onClick={handleNextSlide}
               >
                 <FaArrowRight />
@@ -81,7 +77,7 @@ export default function Page() {
               {sliderIndex === 0 && (
                 <motion.div
                   key="slide1"
-                  className="relative p-2 rounded-2xl group"
+                  className={`${styles.slide} group`}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
@@ -95,17 +91,17 @@ export default function Page() {
                     alt="project image"
                   />
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100"
+                    className={styles.imageOverlay}
                     transition={{ duration: 0.5 }}
                   >
                     <Button
-                      className="text-white p-3 rounded-lg"
+                      className={styles.button}
                       onClick={() => setIsModalOpen(true)}
                     >
                       <FaArrowUp />
                     </Button>
                   </motion.div>
-                  <div className="capitalize mt-5">
+                  <div className={styles.slideDescription}>
                     <AboutContent name="Tech" desc="HTML CSS JS" />
                     <AboutContent name="Title" desc="Bachat Mart" />
                     <AboutContent name="Type" desc="E-commerce Website" />
@@ -117,7 +113,7 @@ export default function Page() {
               {sliderIndex === 1 && (
                 <motion.div
                   key="slide2"
-                  className="relative p-2 group"
+                  className={`${styles.slide} group`}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
@@ -131,17 +127,17 @@ export default function Page() {
                     alt="project image"
                   />
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100"
+                    className={styles.imageOverlay}
                     transition={{ duration: 0.5 }}
                   >
                     <Button
-                      className="text-white p-3 rounded-lg"
+                      className={styles.button}
                       onClick={() => setIsModalOpen(true)}
                     >
                       <FaArrowUp />
                     </Button>
                   </motion.div>
-                  <div className="capitalize mt-5">
+                  <div className={styles.slideDescription}>
                     <AboutContent name="Tech" desc="HTML CSS JS" />
                     <AboutContent name="Title" desc="Bachat Mart" />
                     <AboutContent name="Type" desc="E-commerce Website" />
@@ -160,14 +156,14 @@ export default function Page() {
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            className={styles.modal}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              className="relative p-4 bg-white w-full max-w-lg"
+              className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
               initial="hidden"
               animate="visible"
@@ -180,11 +176,11 @@ export default function Page() {
                 width={500}
                 height={500}
               />
-              <div className="flex justify-between mt-4">
-                <Button className="text-white" onClick={handlePrevImage}>
+              <div className={styles.modalButtons}>
+                <Button className={styles.button} onClick={handlePrevImage}>
                   <FaArrowLeft />
                 </Button>
-                <Button className="text-white" onClick={handleNextImage}>
+                <Button className={styles.button} onClick={handleNextImage}>
                   <FaArrowRight />
                 </Button>
               </div>

@@ -1,0 +1,144 @@
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem; 
+  }
+  
+  .about-title {
+    font-weight: 600;
+    width: 33.333%; 
+    word-break: break-word;
+  }
+  
+  .about-desc {
+    width: 66.667%; 
+    word-break: break-word;
+  }
+  
+
+  /* Navbar container */
+.navbar {
+    position: relative;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+  }
+  
+  /* Navbar inner container */
+  .navbar-container {
+    max-width: 1200px; /* equivalent to container size */
+    margin: 0 auto;
+    padding: 1rem 1.5rem; /* equivalent to px-6 py-4 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Navbar title */
+  .navbar-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold;
+  }
+  
+  /* Desktop menu */
+  .desktop-menu {
+    display: none;
+  }
+  
+  .desktop-menu a {
+    font-family: monospace; /* font-mono */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-right: 2.5rem; /* gap-10 */
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .desktop-menu a:last-child {
+    margin-right: 0;
+  }
+  
+  /* Mobile menu button */
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Mobile menu */
+  .mobile-menu {
+    position: absolute;
+    top: 4rem; /* top-16 */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* gap-6 */
+    padding: 2.5rem 0; /* py-10 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: monospace; /* font-mono */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .mobile-menu a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Responsive styling */
+  @media (min-width: 1024px) {
+    .desktop-menu {
+      display: flex;
+    }
+  
+    .menu-button {
+      display: none;
+    }
+  
+    .mobile-menu {
+      display: none;
+    }
+  }
+  
+  /* Profile image container */
+.profile-image-container {
+    width: 400px;
+    height: 100%;
+    position: relative;
+    display: none; 
+  }
+  
+  @media (min-width: 1024px) {
+    .profile-image-container {
+      display: block;
+    }
+  }
+  
+
+  /* Container for section header */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+  }
+  
+  /* Title styling */
+  .section-titles {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap; 
+  }
+  
+  /* Divider styling */
+  .section-divider {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+  }
+  

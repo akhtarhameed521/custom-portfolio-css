@@ -1,0 +1,83 @@
+.container {
+    background-color: #f1f5f9;
+    border-radius: 0.375rem;
+    text-transform: capitalize;
+  }
+  
+  .innerContainer {
+    margin-top: 1.25rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .gridContainer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .profileImageContainer {
+    width: fit-content;
+  }
+  
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.5rem;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .textContainer {
+      align-items: start;
+      padding-bottom: 0;
+    }
+  }
+  
+  .name {
+    font-size: 3.125rem;
+    font-weight: bold;
+  }
+  
+  .divider {
+    height: 0.125rem;
+    width: 7rem;
+    background-color: #000;
+    border-radius: 0.375rem;
+    margin: 0.5rem 0;
+  }
+  
+  .title {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .blinkingCursor {
+    font-weight: 100;
+    font-size: 1.25rem;
+    color: black;
+    animation: blink 0.8s infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .buttonContainer {
+    margin-top: 1.25rem;
+  }
+  

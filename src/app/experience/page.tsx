@@ -1,70 +1,56 @@
 import ProfileImage from '@/components/layout/ProfileImage';
 import SectionHeader from '@/components/layout/SectionHeader';
 import React from 'react';
+import './styles.css';
 
 export default function Page() {
   return (
-    <div className="flex gap-10 mt-5 font-serif h-[80vh] overflow-auto bg-slate-100 pr-5 ">
-     
-      <div className="flex-shrink-0">
+    <div className="page-container">
+      <div className="profile-image-container">
         <ProfileImage />
       </div>
 
       {/* Right experience Section */}
-      <div className="w-full lg:w-3/4 mt-5  ">
+      <div className="experience-section">
         <SectionHeader title="Experience" />
 
-        {/* experience details */}
-        <div className="mt-8 space-y-8 pb-4 ">
-          {/* experience card */}
-          <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 ">
-            <h3 className="text-xl font-semibold text-gray-800">
-              Digitech Infra Associates - MERN Developer
-            </h3>
-            <p className="text-sm text-gray-500 mt-1">19 March 2024 – Present</p>
-            <ul className="list-disc list-inside mt-4 space-y-2 text-gray-700">
-              <li>
-                Worked on an e-commerce website, developing the vendor dashboard and admin dashboard using HTML, CSS, and JavaScript.
-              </li>
-              <li>
-                Developed interactive features that improved user engagement and streamlined vendor and admin tasks.
-              </li>
-              <li>
-                Architected a full-stack customer review website from scratch, utilizing the MERN stack (MongoDB, Express, React, Node.js).
-              </li>
-              <li>
-                Developed a comprehensive CRM system that streamlined sales and purchase processes for over 10k employees and 100k customers.
-              </li>
-              <li>
-                Enhanced customer interaction tracking, resulting in a 30% increase in customer satisfaction scores.
-              </li>
+        {/* Experience details */}
+        <div className="experience-details">
+          {/* Experience card */}
+          <div className="experience-card">
+            <h3>Digitech Infra Associates - MERN Developer</h3>
+            <p>19 March 2024 – Present</p>
+            <ul>
+              <li>Worked on an e-commerce website, developing vendor and admin dashboards with HTML, CSS, and JavaScript.</li>
+              <li>Developed interactive features that enhanced user engagement and streamlined vendor/admin tasks.</li>
+              <li>Architected a full-stack customer review website from scratch using the MERN stack.</li>
+              <li>Developed a CRM system, streamlining processes for over 10k employees and 100k customers.</li>
+              <li>Improved customer interaction tracking, resulting in a 30% increase in customer satisfaction scores.</li>
             </ul>
           </div>
 
-          {/* professional projects section */}
-          <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-200">
-            <h3 className="text-xl font-semibold text-gray-800">
-              Professional Projects
-            </h3>
+          {/* Professional projects section */}
+          <div className="project-card">
+            <h3>Professional Projects</h3>
 
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold text-gray-700">Bachat Mart – E-commerce Website</h4>
-              <p className="text-gray-600 mt-1">
-                Collaborated with a Laravel developer to integrate the frontend built with HTML, CSS, and JS, and the backend developed with Laravel, ensuring seamless communication and data flow.
+            <div className="project">
+              <h4 className="project-title">Bachat Mart – E-commerce Website</h4>
+              <p className="project-description">
+                Collaborated with a Laravel developer to integrate the frontend and backend, ensuring smooth communication and data flow.
               </p>
             </div>
 
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold text-gray-700">Apna Connection – Social Networking Platform</h4>
-              <p className="text-gray-600 mt-1">
-                Developed using the MERN stack, Apna Connection is a social networking platform designed to connect individuals within a specific community or interest group.
+            <div className="project">
+              <h4 className="project-title">Apna Connection – Social Networking Platform</h4>
+              <p className="project-description">
+                Developed with the MERN stack, connecting individuals within specific communities.
               </p>
             </div>
 
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold text-gray-700">Pakistan Cables CRM – Customer Relationship Management</h4>
-              <p className="text-gray-600 mt-1">
-                Created a CRM system using NestJS and PostgreSQL to handle the sales and purchases of employees, salespersons, and customers.
+            <div className="project">
+              <h4 className="project-title">Pakistan Cables CRM – Customer Relationship Management</h4>
+              <p className="project-description">
+                Created a CRM system using NestJS and PostgreSQL to manage sales and purchases for employees and customers.
               </p>
             </div>
           </div>
